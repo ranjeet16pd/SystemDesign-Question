@@ -88,10 +88,14 @@ class KingBurgerFactory implements BurgerFactory2 {
 
 public class FactoryMethod {
 
-    public static void main(String[] args) {
-            String type = "PremiumBurger2";
-            BurgerFactory2 factory = new SinghBurgerFactory();
-            Burger2 burger = factory.createBurger(type);
-            burger.prepare();
+    static void main(String[] args) {
+        String type = "PremiumBurger2";
+        BurgerFactory2 factory = new SinghBurgerFactory();
+        Burger2 burger = factory.createBurger(type);
+        burger.prepare();
+
+        BurgerFactory2 factory2 = new KingBurgerFactory();
+        Burger2 burger2 = factory2.createBurger(type);
+        burger2.prepare();
     }
 }
